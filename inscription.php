@@ -22,3 +22,13 @@ catch(Exception $e)
 
 //########################## Affichage du contenu de la page ##############################
 ?>
+<html>
+    <h3>Page d'inscription</h3>
+    <form>
+        Pseudo
+        <input type="text">
+        Mot de passe
+        <input type="password">
+        <button type="submit">S'inscrire</button>
+    </form>
+</html>
