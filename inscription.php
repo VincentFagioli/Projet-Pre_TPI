@@ -48,9 +48,9 @@ if(isset($username) && isset($password))
     <h3>Page d'inscription</h3>
     <form method="post" action="inscription.php">
         Pseudo
-        <input type="text" name="username">
+        <input type="text" name="username" placeholder="Entrez un pseudo" required>
         Mot de passe
-        <input type="password" name="password">
+        <input type="password" name="password" placeholder="Entrez un mot de passe" required>
         <button type="submit">S'inscrire</button>
     </form>
 </html>
