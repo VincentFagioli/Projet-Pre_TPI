@@ -15,7 +15,7 @@ catch(Exception $e)
     die('Erreur : '.$e->getMessage());
 }
 //########################## Traitement (SESSION) ############################################
-
+session_start();
 //########################## Traitement (GET) ############################################
 
 //########################## Traitement (POST) ############################################
@@ -37,6 +37,8 @@ if(isset($username) && isset($password))
               if (password_verify($password, $ident['password'])) 
               {
                     echo 'Le mot de passe est valide !';
+                    $_SESSION['UsernameC'] = $username;
+                    header('Location: index.php');
               } 
               else 
               {
