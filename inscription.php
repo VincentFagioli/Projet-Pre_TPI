@@ -23,11 +23,11 @@ extract($_POST); // $username $password
 
 if(isset($username) && isset($password))
 {
+    $passwordHach= password_hash($password,PASSWORD_DEFAULT);
     $stmt = $bdd->prepare("INSERT INTO `user` (`ID_user`, `title`, `firstname`, `lastname`, `username`, `password`, `email`, `phonenumber`, `adress`, `npa`, `locality`) VALUES (NULL, '', '', '', ?, ?, '', NULL, '', NULL, '')");  
     $stmt->bindParam(1, $username);
-    $stmt->bindParam(2, $password);
+    $stmt->bindParam(2, $passwordHach);
     $stmt->execute();
-    print_r($stmt);
     echo"<script language=\"javascript\"> alert('inscription réussie') </script>";
 }
 //########################## Affichage du contenu de la page ##############################
