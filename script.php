@@ -20,13 +20,11 @@
     $ident = $stmt->fetch();
     $idusr = $ident['ID_user'];
     
-    
     extract($_POST); //$mark $modele
-    $id_user1=1;
     if(isset($mark) && isset($modele))
     {           
                 $stmt = $bdd->prepare("INSERT INTO `ad` (`ID_ad`, `FK_user`, `make`, `model`, `type`, `seat`, `price`, `commissioning`, `fuel`, `power`, `mileage`, `consumption`, `location`) VALUES (NULL, ?, ?, ?, '', NULL, NULL, NULL, '', NULL, NULL, NULL, '')");  
-                $stmt->bindParam(2, $idusr);
+                $stmt->bindParam(1, $idusr);
                 $stmt->bindParam(2, $mark);
                 $stmt->bindParam(3, $modele);
                 $stmt->execute();
