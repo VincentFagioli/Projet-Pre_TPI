@@ -4,7 +4,16 @@
 // Auteur:Vincent Fagioli
  
 //########################## Connexion DB ############################################
-
+try
+                {
+                // On se connecte à MySQL
+                   $bdd = new PDO('mysql:host=localhost;dbname=tpi;charset=utf8', 'root', '');
+                }
+                catch(Exception $e)
+                {
+                // En cas d'erreur, on affiche un message et on arrête tout
+                die('Erreur : '.$e->getMessage());
+                }
 //########################## Traitement (SESSION) ############################################
 session_start();
 extract($_SESSION); // $UsernameC
@@ -31,4 +40,25 @@ else
 <a href="inscription.php">inscription</a><br><br></html>'; 
 }
 
+
+  $query = "SELECT * FROM ad INNER JOIN user ON FK_user = user.ID_user";
+                $stmt = $bdd->query($query) or die ("<br>SQL Error in: <br> $query<br>Error message:".$bdd->errorInfo()[2]);  
+
+                echo"<table> <tr>
+                    <th>ID_Annonce</th>
+                    <th>Créateur</th>
+                    <th>Marque</th>
+                    <th>Modele</th>
+            </tr>";
+        
+            
+                while($ident = $stmt->fetch())
+                {
+                    extract ($ident); // $FK_user $username $make $model
+                    echo"<tr><td><a href='adInDetail.php'>$ID_ad</a></td><td>$username</td><td>$make</td><td>$model</td></tr>";
+                } 
+                echo"</table>"
+
 ?>
+
+

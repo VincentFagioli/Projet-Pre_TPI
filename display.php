@@ -30,8 +30,9 @@
                 while($ident = $stmt->fetch())
                 {
                     extract ($ident); // $FK_user $username $make $model
-                    echo"<tr><td>$ID_ad</td><td>$username</td><td>$make</td><td>$model</td></tr>";
+                    echo"<tr><td>$ID_ad</td><td>$username</td><td>$make</td><td>$model</td><td><button id='$ID_ad'>Supprimer</button></td><td><button id='$ID_ad'>Ajouter en favori</button></td></tr>";
                 } 
           
 
   ?>
+
