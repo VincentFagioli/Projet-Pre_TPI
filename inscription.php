@@ -38,7 +38,7 @@ if(isset($username) && isset($password))
                 $stmt = $bdd->prepare("INSERT INTO `user` (`ID_user`, `title`, `firstname`, `lastname`, `username`, `password`, `email`, `phonenumber`, `adress`, `npa`, `locality`) VALUES (NULL, '', '', '', ?, ?, '', NULL, '', NULL, '')");  
                 $stmt->bindParam(1, $username);
                 $stmt->bindParam(2, $passwordHach);
-                $stmt->execute();
+                $stmt->execute() or die ("<br>SQL Error in: <br> $query<br>Error message:".$bdd->errorInfo()[2]); ;
                 echo"<script language=\"javascript\"> alert('inscription réussie') </script>";
         }
 }

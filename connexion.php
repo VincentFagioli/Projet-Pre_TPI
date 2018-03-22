@@ -47,7 +47,7 @@ if(isset($username) && isset($password))
         }
         else
         {
-          echo"<script language=\"javascript\"> alert('Ce pseudo existe pas') </script>";     
+          echo"<script language=\"javascript\"> alert('Ce pseudo n'existe pas') </script>";     
         } 
 }
 

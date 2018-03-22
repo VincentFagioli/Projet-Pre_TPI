@@ -55,7 +55,7 @@ else
                 while($ident = $stmt->fetch())
                 {
                     extract ($ident); // $FK_user $username $make $model
-                    echo"<tr><td><a href='adInDetail.php'>$ID_ad</a></td><td>$username</td><td>$make</td><td>$model</td></tr>";
+                    echo"<tr><td><a href='adInDetail.php?id_ad=$ID_ad'>$ID_ad</a></td><td>$username</td><td>$make</td><td>$model</td></tr>";
                 } 
                 echo"</table>"
 
