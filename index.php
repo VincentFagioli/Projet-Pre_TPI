@@ -32,7 +32,7 @@ if(isset($deco))
 if(isset($UsernameC))
 {
     //echo"<script language=\"javascript\"> alert('Connexion réussie') </script>";    
-    echo "<html><h4>Bienvenue:$UsernameC</h4><form method='post' action='index.php'> <button name='deco' value='deco' type='submit'>deconnexion</button></form><br><br><br><a href='ad.php'>Ajouter une annonce</a></html>";
+    echo "<html><h4>Bienvenue:$UsernameC</h4><form method='post' action='index.php'> <button name='deco' value='deco' type='submit'>deconnexion</button></form><br><br><br><a href='ad.php'>Ajouter une annonce</a><a href='myad.php'>Mes annonces</a></html>";
 }
 else
 {
